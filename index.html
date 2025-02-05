@@ -2,10 +2,26 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url='https://raw.githubusercontent.com/ayoublahdoud/yab/main/Ayoub_LAHDOUD.rar'" />
-    <title>Redirection...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téléchargement...</title>
+    <script>
+        function downloadAndClose() {
+            // Crée un lien de téléchargement
+            const link = document.createElement('a');
+            link.href = "https://raw.githubusercontent.com/ayoublahdoud/yab/main/Ayoub_LAHDOUD.rar"; // Mets ton vrai lien ici
+            link.download = "Ayoub_LAHDOUD.rar"; 
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Ferme la page après 3 secondes
+            setTimeout(() => { 
+                window.close(); 
+            }, 3000);
+        }
+    </script>
 </head>
-<body>
-    <p>Si le téléchargement ne démarre pas, <a href="https://raw.githubusercontent.com/ayoublahdoud/yab/main/Ayoub_LAHDOUD.rar">clique ici</a>.</p>
+<body onload="downloadAndClose()">
+    <h1>Le téléchargement commence...</h1>
 </body>
 </html>
